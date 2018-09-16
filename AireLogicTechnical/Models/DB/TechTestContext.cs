@@ -10,23 +10,13 @@ namespace AireLogicTechnical.Models.DB
         {
         }
 
-        public TechTestContext(DbContextOptions<TechTestContext> options)
-            : base(options)
+        public TechTestContext(DbContextOptions<TechTestContext> options) : base(options)
         {
         }
 
         public virtual DbSet<Colours> Colours { get; set; }
         public virtual DbSet<FavouriteColours> FavouriteColours { get; set; }
         public virtual DbSet<People> People { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=TechTest;Trusted_Connection=True;");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -28,6 +28,18 @@ body {
     margin: 15px;
 }
 
+.activeText{
+    color: green;
+}
+
+.inactiveText {
+    color: red;
+}
+
+.inlineSpan {
+    display: inline
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */

@@ -1,0 +1,525 @@
+﻿/*#region General */
+
+body {
+    font-family: "Poppins";
+}
+
+h1, h2, h3, h4, h5 {
+    color: #2B142C;
+    font-weight: 900;
+}
+
+h1 {
+    font-size: 68pt;
+    line-height: 72pt;
+}
+
+h2 {
+    font-size: 42pt;
+    line-height: 48pt;
+}
+
+h3 {
+    font-size: 32pt;
+    line-height: 40pt;
+}
+
+h4 {
+    font-size: 24pt;
+    line-height: 32pt;
+}
+
+h5 {
+    font-size: 20pt;
+    line-height: 32pt;
+}
+
+.largeParagraph {
+    color: #757676;
+    font-size: 20pt;
+    line-height: 34pt;
+}
+
+.bigParagraph {
+    color: #757676;
+    font-size: 16pt;
+    line-height: 26pt;
+}
+
+.mediumParagraph {
+    color: #757676;
+    font-size: 14pt;
+    line-height: 24pt;
+}
+
+.smallParagraph {
+    color: #757676;
+    font-size: 12pt;
+    line-height: 20pt;
+}
+
+table {
+    width: 100%;
+}
+
+a:hover, label:hover{
+    cursor: pointer;
+}
+
+/*#endregion General*/
+
+/*#region Primary */
+
+.primary {
+    color: #3056EE;
+}
+
+.primary-bk {
+    background-color: #3056EE;
+}
+
+.primary-light {
+    color: #7682FF;
+}
+
+.primary-light-bk {
+    background-color: #7682FF;
+}
+
+.primary-dark {
+    color: #002EBA;
+}
+
+.primary-dark-bk {
+    background-color: #002EBA;
+}
+
+.primary-shade-vl {
+    color: #EAEEFD;
+}
+
+.primary-shade-vl-bk {
+    background-color: #EAEEFD;
+}
+
+.primary-shade-l {
+    color: #C0CCF9;
+}
+
+.primary-shade-l-bk {
+    background-color: #C0CCF9;
+}
+
+.primary-shade-m {
+    color: #5977F1;
+}
+
+.primary-shade-m-bk {
+    background-color: #5977F1;
+}
+
+.primary-shade-md {
+    color: #213CA6;
+}
+
+.primary-shade-md-bk {
+    background-color: #213CA6;
+}
+
+.primary-shade-vd {
+    color: #13225F;
+}
+
+.primary-shade-vd-bk {
+    background-color: #13225F;
+}
+
+/*#endregion Primary*/
+
+/*#region Secondary */
+
+.secondary {
+    color: #DB2473;
+}
+
+.secondary-bk {
+    background-color: #DB2473;
+}
+
+.secondary-light {
+    color: #FF62A1;
+}
+
+.secondary-light-bk {
+    background-color: #FF62A1;
+}
+
+.secondary-dark {
+    color: #A40048;
+}
+
+.secondary-dark-bk {
+    background-color: #A40048;
+}
+
+.secondary-shade-vl {
+    color: #FBE9F1;
+}
+
+.secondary-shade-vl-bk {
+    background-color: #FBE9F1;
+}
+
+.secondary-shade-l {
+    color: #F7D3E3;
+}
+
+.secondary-shade-l-bk {
+    background-color: #F7D3E3;
+}
+
+.secondary-shade-m {
+    color: #E97BAB;
+}
+
+.secondary-shade-m-bk {
+    background-color: #E97BAB;
+}
+
+.secondary-shade-md {
+    color: #C52067;
+}
+
+.secondary-shade-md-bk {
+    background-color: #C52067;
+}
+
+.secondary-shade-vd {
+    color: #570E2E;
+}
+
+.secondary-shade-vd-bk {
+    background-color: #570E2E;
+}
+
+/*#endregion Secondary*/
+
+/*#region Tertiary */
+
+.tertiary {
+    color: #55D4AD;
+}
+
+.tertiary-bk {
+    background-color: #55D4AD;
+}
+
+.tertiary-light {
+    color: #8BFFDF;
+}
+
+.tertiary-light-bk {
+    background-color: #8BFFDF;
+}
+
+.tertiary-dark {
+    color: #06A27E;
+}
+
+.tertiary-dark-bk {
+    background-color: #06A27E;
+}
+
+.tertiary-shade-vl {
+    color: #EEFAF6;
+}
+
+.tertiary-shade-vl-bk {
+    background-color: #EEFAF6;
+}
+
+.tertiary-shade-l {
+    color: #CCF2E6;
+}
+
+.tertiary-shade-l-bk {
+    background-color: #CCF2E6;
+}
+
+.tertiary-shade-m {
+    color: #99E5CE;
+}
+
+.tertiary-shade-m-bk {
+    background-color: #99E5CE;
+}
+
+.tertiary-shade-md {
+    color: #44A98B;
+}
+
+.tertiary-shade-md-bk {
+    background-color: #44A98B;
+}
+
+.tertiary-shade-vd {
+    color: #193F34;
+}
+
+.tertiary-shade-vd-bk {
+    background-color: #193F34;
+}
+
+/*#endregion Tertiary*/
+
+/*#region Grayscale */
+
+.grayscale-1 {
+    background-color: #E6EAEB;
+}
+
+.grayscale-2 {
+    background-color: #CDD5D7;
+}
+
+.grayscale-3 {
+    background-color: #B4C0C4;
+}
+
+.grayscale-4 {
+    background-color: #6A8189;
+}
+
+.grayscale-5 {
+    background-color: #20424E;
+}
+
+.grayscale-6 {
+    background-color: #082E3B;
+}
+
+.grayscale-7 {
+    background-color: #072935;
+}
+
+.grayscale-8 {
+    background-color: #04171D;
+}
+
+.grayscale-9 {
+    background-color: #01090B;
+}
+
+/*#endregion Grayscale*/
+
+/*#region Generic Buttons */
+
+.smallButton {
+    font-size: 10px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    font-family: Poppins;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 3px;
+}
+
+.mediumButton {
+    font-size: 14px;
+    padding: 20px 30px;
+    outline: none;
+    border: none;
+    font-family: Poppins;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 3px;
+}
+
+.bigButton {
+    font-size: 20px;
+    padding: 30px 40px;
+    outline: none;
+    border: none;
+    font-family: Poppins;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 3px;
+}
+
+/*#endregion Generic Buttons*/
+
+/*#region Primary Buttons */
+
+.primaryButton1 {
+    background-color: #3056EE;
+    color: white;
+}
+
+    .primaryButton1:active, .primaryButton1.active {
+        background-color: #002EBA;
+        color: white;
+    }
+
+    .primaryButton1:disabled {
+        background-color: #3056EE;
+        color: white;
+        opacity: 0.3;
+    }
+
+.primaryButton2 {
+    background-color: white;
+    color: #3056EE;
+    border: solid 1px #3056EE;
+}
+
+    .primaryButton2:active, .primaryButton2.active {
+        background-color: #C0CCF9;
+        color: #3056EE;
+        border: solid 1px #3056EE;
+    }
+
+    .primaryButton2:disabled {
+        background-color: white;
+        color: #3056EE;
+        opacity: 0.3;
+        border: solid 1px #3056EE;
+    }
+
+.primaryButton3 {
+    background-color: white;
+    color: #072935;
+}
+
+    .primaryButton3:active, .primaryButton3.active {
+        background-color: #C0CCF9;
+        color: #072935;
+    }
+
+    .primaryButton3:disabled {
+        background-color: white;
+        color: #072935;
+        opacity: 0.3;
+    }
+
+/*#endregion Primary Buttons*/
+
+/*#region Secondary Buttons */
+
+.secondaryButton1 {
+    background-color: #DB2473;
+    color: white;
+}
+
+    .secondaryButton1:active, .secondaryButton1.active {
+        background-color: #A40048;
+        color: white;
+    }
+
+    .secondaryButton1:disabled {
+        background-color: #DB2473;
+        color: white;
+        opacity: 0.3;
+    }
+
+.secondaryButton2 {
+    background-color: white;
+    color: #DB2473;
+    border: solid 1px #DB2473;
+}
+
+    .secondaryButton2:active, .secondaryButton2.active {
+        background-color: #F7D3E3;
+        color: #DB2473;
+        border: solid 1px #DB2473;
+    }
+
+    .secondaryButton2:disabled {
+        background-color: white;
+        color: #DB2473;
+        opacity: 0.3;
+        border: solid 1px #DB2473;
+    }
+
+.secondaryButton3 {
+    background-color: white;
+    color: #072935;
+}
+
+    .secondaryButton3:active, .secondaryButton3.active {
+        background-color: #F7D3E3;
+        color: #072935;
+    }
+
+    .secondaryButton3:disabled {
+        background-color: white;
+        color: #072935;
+        opacity: 0.3;
+    }
+
+/*#endregion secondary Buttons*/
+
+/*#region Tertiary Buttons */
+
+.tertiaryButton1 {
+    background-color: #55D4AD;
+    color: white;
+}
+
+    .tertiaryButton1:active, .tertiaryButton1.active {
+        background-color: #06A27E;
+        color: white;
+    }
+
+    .tertiaryButton1:disabled {
+        background-color: #55D4AD;
+        color: white;
+        opacity: 0.4;
+    }
+
+.tertiaryButton2 {
+    background-color: white;
+    color: #55D4AD;
+    border: solid 1px #55D4AD;
+}
+
+    .tertiaryButton2:active, .tertiaryButton2.active {
+        background-color: #CCF2E6;
+        color: #55D4AD;
+        border: solid 1px #55D4AD;
+    }
+
+    .tertiaryButton2:disabled {
+        background-color: white;
+        color: #55D4AD;
+        opacity: 0.6;
+        border: solid 1px #55D4AD;
+    }
+
+.tertiaryButton3 {
+    background-color: white;
+    color: #072935;
+}
+
+    .tertiaryButton3:active, .tertiaryButton3.active {
+        background-color: #CCF2E6;
+        color: #072935;
+    }
+
+    .tertiaryButton3:disabled {
+        background-color: white;
+        color: #072935;
+        opacity: 0.3;
+    }
+
+/*#endregion tertiary Buttons*/
+
+/*#region WebElPage */
+
+.webelcolrow {
+    margin: 10px 0px;
+    display: inline-block;
+    width: 100%;
+}
+
+/*#endregion WebElPage*/
