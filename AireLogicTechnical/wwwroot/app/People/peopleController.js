@@ -7,10 +7,6 @@
     $scope.showAuth = true;
     $scope.showEnabled = true;
 
-    //$scope.showRed = true;
-    //$scope.showBlue = true;
-    //$scope.showGreen = true;
-
     $scope.getAllPeople = function () {
         peopleService.GetAllPeople().then(function (data) {
 
