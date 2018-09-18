@@ -65,7 +65,7 @@
     <div ng-show="!showList">
 
         <h2>
-            Update {{selectedPerson.firstName}} {{selectedPerson.lastName}}
+            Update {{selectedPerson.person.firstName}} {{selectedPerson.person.lastName}}
         </h2>
 
         <h4>
@@ -76,10 +76,10 @@
 
         <div>
             <label ng-click="switchAuth()">Authorised</label>
-            <input ng-show="showAuth" ng-model="selectedPerson.isAuthorised" type="checkbox" />
+            <input ng-show="showAuth" ng-model="selectedPerson.person.isAuthorised" type="checkbox" />
             <br />
             <label ng-click="switchEnabled()">Enabled</label>
-            <input ng-show="showEnabled" ng-model="selectedPerson.isEnabled" type="checkbox" />
+            <input ng-show="showEnabled" ng-model="selectedPerson.person.isEnabled" type="checkbox" />
         </div>
 
         <h4>
@@ -89,17 +89,15 @@
         <hr />
 
         <div>
-            <label ng-click="switchRed()">Red</label>
-            <input ng-show="showRed" ng-model="selectedPerson.red" type="checkbox" />
-            <br />
-            <label ng-click="switchGreen()">Green</label>
-            <input ng-show="showGreen" ng-model="selectedPerson.green" type="checkbox" />
-            <br />
-            <label ng-click="switchBlue()">Blue</label>
-            <input ng-show="showBlue" ng-model="selectedPerson.blue" type="checkbox" />
-        </div>
 
-        <br />
+            @*forloop*@
+            <div ng-repeat="colour in selectedPerson.colours">
+                <label ng-click="toggleCheckboxVisibility(colour)">{{colour.name}}</label>
+                <input ng-show="!colour.hidden" ng-model="colour.isSelected" type="checkbox" />
+                <br />
+            </div>
+
+        </div>
 
         <button class="tertiaryButton1 smallButton" ng-click="savePerson()">Save Changes</button>
         <button class="btn-default smallButton" ng-click="goBack()">Cancel</button>

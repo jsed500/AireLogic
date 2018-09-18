@@ -1,4 +1,5 @@
 ﻿using AireLogicTechnical.DAL;
+using AireLogicTechnical.DTOs;
 using AireLogicTechnical.Models.DB;
 using System;
 using System.Collections.Generic;
@@ -21,17 +22,53 @@ namespace AireLogicTechnical.Business
             return await peopleDAL.GetAllPeopleAsync();
         }
 
-        public async Task<People> GetPerson(int personId)
+        public async Task<PersonDetail> GetPersonDetail(int personId)
         {
-            return await peopleDAL.GetPersonByIdAsync(personId);
+            var personDetail = new PersonDetail()
+            {
+                Person = await peopleDAL.GetPersonByIdAsync(personId),
+                Colours = new List<SelectedColour>()
+            };
+
+            var allColours = await peopleDAL.GetAllEnabledColours();
+
+            foreach (var colour in allColours)
+            {
+                SelectedColour selectedColour = new SelectedColour()
+                {
+                    ColourId = colour.ColourId,
+                    IsEnabled = colour.IsEnabled,
+                    Name = colour.Name,
+                    Hidden = false //show all at start by default
+                };
+
+                selectedColour.IsSelected = personDetail.Person.FavouriteColours.Select(x => x.ColourId).Contains(colour.ColourId);
+
+                personDetail.Colours.Add(selectedColour);
+            }
+
+            return personDetail;
         }
 
-        public async Task UpdatePerson(People person)
+        public async Task UpdatePerson(PersonDetail personDetail)
         {
-            var colours = person.FavouriteColours;
-            await peopleDAL.UpdateColours(person.PersonId, colours.ToList());
+            //process favourite colours
+            personDetail.Person.FavouriteColours = new List<FavouriteColours>();
 
-            await peopleDAL.UpdatePerson(person);
+            foreach (var colour in personDetail.Colours)
+            {
+                if (colour.IsSelected)
+                {
+                    personDetail.Person.FavouriteColours.Add(new FavouriteColours()
+                    {
+                        ColourId = colour.ColourId,
+                        PersonId = personDetail.Person.PersonId
+                    });
+                }
+            }
+
+            await peopleDAL.UpdatePerson(personDetail.Person);
+            await peopleDAL.UpdateColours(personDetail.Person.PersonId, personDetail.Person.FavouriteColours.ToList());
         }
     }
 }

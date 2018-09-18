@@ -1,4 +1,5 @@
 ﻿using AireLogicTechnical.Business;
+using AireLogicTechnical.DTOs;
 using AireLogicTechnical.Models.DB;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -36,11 +37,11 @@ namespace AireLogicTechnical.ApiControllers
         }
 
         [HttpGet("GetPerson")]
-        public async Task<ActionResult<People>> GetPerson(int id)
+        public async Task<ActionResult<PersonDetail>> GetPerson(int id)
         {
             try
             {
-                var person = await peopleBusiness.GetPerson(id);
+                var person = await peopleBusiness.GetPersonDetail(id);
                 return new OkObjectResult(person);
             }
             catch (Exception ex)
@@ -53,12 +54,12 @@ namespace AireLogicTechnical.ApiControllers
         }
 
         [HttpPut("UpdatePerson")]
-        public async Task<ActionResult<People>> UpdatePerson(People person)
+        public async Task<ActionResult<PersonDetail>> UpdatePerson(PersonDetail personDetail)
         {
             try
             {
-                await peopleBusiness.UpdatePerson(person);
-                var updatedPerson = await peopleBusiness.GetPerson(person.PersonId);
+                await peopleBusiness.UpdatePerson(personDetail);
+                var updatedPerson = await peopleBusiness.GetPersonDetail(personDetail.Person.PersonId);
                 return new OkObjectResult(updatedPerson);
             }
             catch (Exception ex)

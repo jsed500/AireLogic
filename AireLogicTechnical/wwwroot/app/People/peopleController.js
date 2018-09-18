@@ -7,13 +7,12 @@
     $scope.showAuth = true;
     $scope.showEnabled = true;
 
-    $scope.showRed = true;
-    $scope.showBlue = true;
-    $scope.showGreen = true;
+    //$scope.showRed = true;
+    //$scope.showBlue = true;
+    //$scope.showGreen = true;
 
     $scope.getAllPeople = function () {
-        peopleService.GetAllPeople()
-            .then(function (data) {
+        peopleService.GetAllPeople().then(function (data) {
 
                 $scope.people = data;
 
@@ -33,10 +32,6 @@
 
                 $scope.selectedPerson = data;
 
-                $scope.selectedPerson.red = checkArrayContainsPropertyValue(data.favouriteColours, "colourId", 1);
-                $scope.selectedPerson.green = checkArrayContainsPropertyValue(data.favouriteColours, "colourId", 2);
-                $scope.selectedPerson.blue = checkArrayContainsPropertyValue(data.favouriteColours, "colourId", 3);
-
                 $scope.showList = false;
 
             }, function () {
@@ -46,40 +41,10 @@
 
     $scope.savePerson = function () {
 
-        //convert red,green,blue properties to list equivalent
-        $scope.selectedPerson.favouriteColours = new Array();
-
-        if ($scope.selectedPerson.red)
-        {
-            $scope.selectedPerson.favouriteColours.push(
-            {
-                colourId: 1,
-                personId: $scope.selectedPerson.personId
-            });
-        }
-
-        if ($scope.selectedPerson.green)
-        {
-            $scope.selectedPerson.favouriteColours.push(
-            {
-                colourId: 2,
-                personId: $scope.selectedPerson.personId
-            });
-        }
-
-        if ($scope.selectedPerson.blue)
-        {
-            $scope.selectedPerson.favouriteColours.push(
-            {
-                colourId: 3,
-                personId: $scope.selectedPerson.personId
-            });
-        }
-
         peopleService.UpdatePerson($scope.selectedPerson)
             .then(function (data) {
 
-                var updatedPerson = data;
+                var updatedPerson = data.person;
                 
                 var updateIndex = $scope.people.findIndex(x => x.personId === updatedPerson.personId);
 
@@ -105,16 +70,8 @@
         $scope.showEnabled = !$scope.showEnabled;
     };
 
-    $scope.switchBlue = function () {
-        $scope.showBlue = !$scope.showBlue;
-    };
-
-    $scope.switchRed = function () {
-        $scope.showRed = !$scope.showRed;
-    };
-
-    $scope.switchGreen = function () {
-        $scope.showGreen = !$scope.showGreen;
+    $scope.toggleCheckboxVisibility = function (colour) {
+        colour.hidden = !colour.hidden;
     };
 
     $scope.goBack = function (id) {

@@ -28,6 +28,11 @@ namespace AireLogicTechnical.DAL
             return await _context.People.Where(y => y.PersonId == personId).Include(x => x.FavouriteColours).ThenInclude(c => c.Colour).FirstOrDefaultAsync();
         }
 
+        public async Task<List<Colours>> GetAllEnabledColours()
+        {
+            return await _context.Colours.Where(y => y.IsEnabled).ToListAsync();
+        }
+
         public async Task<List<FavouriteColours>> GetColoursByPersonIdAsync(int personId)
         {
             return await _context.FavouriteColours.Where(y => y.PersonId == personId).ToListAsync();
@@ -37,9 +42,10 @@ namespace AireLogicTechnical.DAL
         {
             try
             {
-                _context.Entry(person).State = EntityState.Modified;
-                _context.Entry(person).Collection(x => x.FavouriteColours).IsModified = false;
+                //_context.Entry(person).State = EntityState.Modified;
+                //_context.Entry(person).Collection(x => x.FavouriteColours).IsModified = false;
                 _context.People.Update(person);
+
                 await _context.SaveChangesAsync();
             }
             catch(Exception ex)
